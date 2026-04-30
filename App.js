@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Button, Image, StyleSheet, Text, View } from "react-native";
 
 // importamos el codigo
 const icono = require("./assets/icon.png");
@@ -21,6 +21,8 @@ export default function App() {
       >
         Tenemos aqui la app.
       </Text>
+      <Button title="Presioname"
+       onPress={() => alert("Hola")} />
     </View>
   );
 }
