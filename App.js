@@ -6,9 +6,21 @@ const icono = require("./assets/icon.png");
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image fadeDuration={1} source={icono} style={styles.image} />
-      <StatusBar style="auto" />
-      <Text>Tenemos aqui la app.</Text>
+      {/* <Image fadeDuration={1} source={icono} style={styles.image} /> */}
+      <Image
+        source={{
+          uri: "https://i.pinimg.com/1200x/8b/f9/7c/8bf97c46f37c04605fa0d45be069d4d4.jpg",
+        }}
+        style={styles.image}
+      />
+      <StatusBar style="light" />
+      <Text
+        style={{
+          color: "#fff",
+        }}
+      >
+        Tenemos aqui la app.
+      </Text>
     </View>
   );
 }
@@ -16,13 +28,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#09f",
+    backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
   },
   image: {
-    width: 200,
-    height: 100,
+    width: 215,
+    height: 294,
     resizeMode: "contain",
   },
 });
