@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import {
   Button,
   Image,
+  Pressable,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -30,9 +31,28 @@ export default function App() {
       </Text> */}
       {/* boton nativo de react native */}
       {/* <Button title="Presioname" onPress={() => alert("Hola")} /> */}
-      <TouchableHighlight underlayColor={"#09f"} onPress={() => alert("Hola")}>
+      {/* <TouchableHighlight underlayColor={"#09f"} onPress={() => alert("Hola")}>
         <Text style={{ color: "#fff" }}>Presioname</Text>
-      </TouchableHighlight>
+      </TouchableHighlight> */}
+      <Pressable
+        onPress={() => {}}
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? "#09f" : "rgb(204, 23, 84)",
+          },
+          styles.wrapperCustom,
+        ]}
+      >
+        {({ pressed }) => (
+          <Text
+            style={{
+              fontSize: pressed ? 32 : 16,
+            }}
+          >
+            {pressed ? "Presionado!" : "Presioname"}
+          </Text>
+        )}
+      </Pressable>
     </View>
   );
 }
