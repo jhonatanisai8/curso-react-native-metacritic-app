@@ -2,10 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
-  Image,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
+  FlatList,
   StyleSheet,
   Text,
   View,
@@ -35,14 +32,11 @@ export default function Main() {
       {characters.length === 0 ? (
         <ActivityIndicator color="#fff" size="large"></ActivityIndicator>
       ) : (
-        <ScrollView>
-          {characters.map((character) => (
-            <CharacterCard
-              key={character.id}
-              character={character}
-            ></CharacterCard>
-          ))}
-        </ScrollView>
+        <FlatList
+          data={characters}
+          keyExtractor={(character) => character.id}
+          renderItem={({ item }) => <CharacterCard character={item} />}
+        ></FlatList>
       )}
     </View>
   );
