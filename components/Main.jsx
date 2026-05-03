@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Text,
   View,
+  ActivityIndicator,
 } from "react-native";
 import { getCharacters } from "../lib/metacritic";
 import CharacterCard from "./CharacterCard";
@@ -31,14 +32,18 @@ export default function Main() {
         paddingBottom: insets.bottom,
       }}
     >
-      <ScrollView>
-        {characters.map((character) => (
-          <CharacterCard
-            key={character.id}
-            character={character}
-          ></CharacterCard>
-        ))}
-      </ScrollView>
+      {characters.length === 0 ? (
+        <ActivityIndicator></ActivityIndicator>
+      ) : (
+        <ScrollView>
+          {characters.map((character) => (
+            <CharacterCard
+              key={character.id}
+              character={character}
+            ></CharacterCard>
+          ))}
+        </ScrollView>
+      )}
     </View>
   );
 }
