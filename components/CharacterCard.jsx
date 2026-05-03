@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function CharacterCard({ character }) {
   return (
-    <View style={styles.card}>
+    <View key={character.id} style={styles.card}>
       <Image source={{ uri: character.image }} style={styles.image} />
       <Text style={styles.title}>{character.name}</Text>
       {character.phrases && character.phrases.length > 0 && (
