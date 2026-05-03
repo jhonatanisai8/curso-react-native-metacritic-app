@@ -33,7 +33,7 @@ export default function Main() {
       }}
     >
       {characters.length === 0 ? (
-        <ActivityIndicator color="#fff"></ActivityIndicator>
+        <ActivityIndicator color="#fff" size="large"></ActivityIndicator>
       ) : (
         <ScrollView>
           {characters.map((character) => (
